@@ -49,8 +49,23 @@ def organize_folder(target_path):
             others_folder = os.path.join(target_path, 'Others')
             os.makedirs(others_folder, exist_ok=True)
             shutil.move(file_path, os.path.join(others_folder, filename))
+            
+import tkinter as tk
+from tkinter import filedialog
+import os
 
 if __name__ == "__main__":
-    # Test it on a specific folder (Be careful! Use a test folder first)
-    path_to_clean = input("Enter the full path of the folder you want to clean: ")
-    organize_folder(path_to_clean)
+    # 1. Create a hidden background window (so it doesn't look messy)
+    root = tk.Tk()
+    root.withdraw()
+
+    # 2. Open the Mac folder selection dialog
+    print("Please select the folder you want to organize...")
+    selected_path = filedialog.askdirectory(title="Select Folder to Organize")
+
+    # 3. Check if the user actually picked a folder or just hit 'Cancel'
+    if selected_path:
+        organize_folder(selected_path)
+        print(f"Success! Folder organized: {selected_path}")
+    else:
+        print("No folder selected. Exiting.")

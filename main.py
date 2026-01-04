@@ -48,7 +48,7 @@ for folder_name, extention in EXTENTION_MAP.item():
           os.makedirs(others_folder, exist_ok=True)
           shutil.move(file_path, os.path.join(others_folder, filename)
 
-if __name__ == '__main__":
+if __name__ == "__main__":
                       # Test it on specific folder (Be careful! Use a test folder first)
                       path_to_clean = imput ("Enter the full path of the folder you want to clean: ")
                       organize_folder(path_to_clean

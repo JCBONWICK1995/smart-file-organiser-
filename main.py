@@ -13,7 +13,7 @@ EXTENTION_MAP = {
 def organize_folder(target_path):
   #Ensure the path exists
     if not os.path.exists(target_path):
-    print(f"Error: the path {target_path} does not exist.")
+      print(f"Error: the path {target_path} does not exist.")
     return
   
   #2. loo[ through every file in the folder

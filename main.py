@@ -17,11 +17,10 @@ def organize_folder(target_path):
     return
   
   #2. loo[ through every file in the folder
-  for filename in os.listdir(target_path):
-  
+    for filename in os.listdir(target_path):
     # Skip if it's a directory, we only want files
   
-  if os.path.isdir(file_path):
+    if os.path.isdir(file_path):
     continue
   
   #3. Identify the file extention
